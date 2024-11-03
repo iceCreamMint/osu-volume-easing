@@ -129,7 +129,7 @@ def save_file():
 
         cursor += step
         seek = (cursor - starttime) / interval
-        while (start_volume + int(round(easing(seek) * volume_change)) - curr_volume < 1) and (cursor <= endtime):
+        while (abs(start_volume + int(round(easing(seek) * volume_change)) - curr_volume) < 1) and (cursor <= endtime):
             cursor += 1
             seek = (cursor - starttime) / interval
         counter += 1
@@ -174,7 +174,7 @@ def line_gen():
 
         cursor += step
         seek = (cursor - starttime) / interval
-        while (start_volume + int(round(easing(seek) * volume_change)) - curr_volume < 1) & (cursor <= endtime):
+        while (abs(start_volume + int(round(easing(seek) * volume_change)) - curr_volume) < 1) and (cursor <= endtime):
             cursor += 1
             seek = (cursor - starttime) / interval
         counter += 1
